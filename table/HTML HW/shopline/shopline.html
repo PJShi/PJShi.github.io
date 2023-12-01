@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://www.flaticon.com/animated-icons">
     <style>
+        
         .header {
             background-color: #F7F8F9;
             background-size: 100%;
@@ -25,6 +26,7 @@
         }
 
         .item {
+            margin: auto;
             display: flex;
             color: #052855;
             width: 1000px;
@@ -65,14 +67,25 @@
             width: 400px;
             margin: 20px;
         }
-
+        a{
+            text-decoration: none;
+        }
         span {
             text-decoration: underline;
             padding-bottom: 20px;
 
         }
+        a::after {
+            content: "→";
+            margin-left: 0px;
+            transition: .5s;
 
+        }
+        a:hover::after{
+            margin-left: .4em;
+        }
         .servers {
+            margin: auto;
             background-color: #F7F8F9;
             background-size: 100%;
             width: 1000px;
@@ -112,6 +125,7 @@
 </head>
 
 <body>
+    
     <div class="header">
         <h3>單一平台就能助你<br>在全通路輕鬆開店創業</h3>
         <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
@@ -139,8 +153,8 @@
 
                     </tr>
                 </thead>
-            </table>
-            <span><a href=""><br>看看開店密技</a></span>
+            </table>            
+            <a href="#"><span><br>看看開店密技</span></a>
 
         </div>
         <div class="pic"><img src="./pic/lets get started.webp" alt=""></div>
@@ -169,7 +183,7 @@
                     </tr>
                 </thead>
             </table>
-            <span><a href=""><br>了解更多金物流</a></span>
+            <a href="#"><span><br>了解更多金物流</span></a>
 
         </div>
         <div class="pic"><img src="./pic/送貨方式.webp" alt=""></div>
@@ -197,8 +211,8 @@
 
                     </tr>
                 </thead>
-            </table>
-            <span><a href=""><br>看更多優惠模組</a></span>
+            </table>            
+            <a href="#"><span><br>看更多優惠模組</span></a>
 
         </div>
         <div class="pic"><img src="./pic/sale.webp" alt=""></div>
@@ -227,7 +241,8 @@
                     </tr>
                 </thead>
             </table>
-            <span><a href=""><br>看更多社群購物功能</a></span>
+            
+            <a href="#"><span><br>看更多社群購物功能</span></a>
 
         </div>
         <div class="pic"><img src="./pic/hi.webp" alt=""></div>
@@ -255,8 +270,8 @@
 
                     </tr>
                 </thead>
-            </table>
-            <span><a href=""><br>了解更多全通路整合</a></span>
+            </table>            
+            <a href="#"><span><br>了解更多全通路整合</span></a>
 
         </div>
         <div class="pic"><img src="./pic/顧客管理.webp" alt=""></div>
