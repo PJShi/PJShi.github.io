@@ -2266,23 +2266,22 @@
                 let Tbodytr = document.createElement("tr");
                 console.log(item)
                 console.log(Object.keys(item))
+                
                 Object.keys(item).forEach(key => {
                     let td = document.createElement('td')
-                    let img = document.createElement("img");
-                    img.setAttribute("src", `${item.url}`);
-                    img.setAttribute("style", "width:100px");
-                    // if(key==='img'){
-                    // let imgsrc = document.createElement('img')
-                    //     imgsrc.src = img.value
-                    //     td.appendChild(imgsrc)
-                    //     // var container = document.getElementById('img')
-                    //     // container.appendChild(imgsrc);
-                    //     return 
-                    // }
+                    // let img = document.createElement("img");
 
+                    
+                    if (key === 'img') {
+                        let img = document.createElement('img')
+                        img.setAttribute("style", "width:300px");
+                        img.setAttribute("src", item.img);
+                        td.appendChild(img)
+                    }
+                    else {
+                        td.innerText = item[key]
 
-
-                    td.innerText = item[key]
+                    }
                     Tbodytr.append(td)
                 })
                 // Object.values(item).forEach(element=>{
