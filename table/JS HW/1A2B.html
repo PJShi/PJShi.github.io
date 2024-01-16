@@ -87,9 +87,6 @@
         })
         guessNumber.addEventListener("click", function () {
             checkDataFn()
-            
-
-
         })
 
         //猜 輸入框 & enter
@@ -109,11 +106,11 @@
 
             let inputValue = inputGuess.value
 
-            console.log(typeof parseInt(inputValue))
-            console.log(isNaN(parseInt(inputValue)))
+            // console.log(typeof parseInt(inputValue))
+            // console.log(isNaN(parseInt(inputValue)))
 
             let cleanValue = new Set(inputValue)
-            console.log(cleanValue.size)
+            // console.log(cleanValue.size)
             if (isNaN(parseInt(inputValue)) || cleanValue.size !== 4) {
                 appendAlert('輸入錯誤!!請輸入正確的(0~9)四位不相同數字!', 'danger')
                 
@@ -131,14 +128,14 @@
                     else {
                         countB++
                     }
-                    console.log('a:' + countA)
-                    console.log('b:' + countB)
+                    // console.log('a:' + countA)
+                    // console.log('b:' + countB)
                 }
 
             })
             
             ul += `<li class="list-group-item"><span class="badge bg-${countA===4?"primary":"danger"} rounded-pill">${countA}A${countB}B</span>${inputValue}</li>`
-            console.log(ul)
+            // console.log(ul)
             ulDom.innerHTML = ul
 
 
@@ -150,11 +147,7 @@
 
             }
             inputGuess.value=""
-
         }
-
-
-
 
         //-------------------------
 
@@ -168,17 +161,11 @@
                 '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
                 '</div>'
             ].join('')
-
             alertPlaceholder.append(wrapper)
-
-
-
-
         }
 
         window.onload = function () {
             initStatus()
-
         }
 
         function initStatus() {
