@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+
     <style>
-    .list-item {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-}
+        .list-item {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: ;
+        }
 
-.list-item.done {
-    background-color: #f2f2f2;
-    text-decoration: line-through;
-}
+        .list-item.done {
+            background-color: #f2f2f2;
+            text-decoration: line-through;
+            background-color: blue;
+        }
 
-.list-btn {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;}
+        .list-btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
 
-.list-content {
-    flex: 1;
-}
+        .list-content {
+            flex: 1;
+        }
 
-.form-check-input {
-    width: 20px;
-    height: 20px;
-    
-}
+        .form-check-input {
+            width: 20px;
+            height: 20px;
 
-</style>
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <h1 class="text-center mt-4">To Do List</h1>
@@ -47,127 +51,150 @@
                 <button class="btn btn-primary" id="btn-plus">Add</button>
             </div>
         </div>
-        <div class="list-box mt-3" id="todoList"></div>
-        
+        <div class="list-box  input-group mb-3" id="todoList">
+            <div class="input-group-text">
+                <input class="form" type="checkbox" value="">
+            </div>
+            <input type="text" class="form-control" aria-label="Text input with checkbox">
+            <button class="btn btn-info m1-2">EDIT</button>
+            <button class="btn btn-danger m1-2">DELETE</button>
+        </div>
+
+
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-    
+
+
 
     <script>
-// 宣告 --------------------------------------
-let checkValue = false;//用於存儲每個待辦事項的勾選狀態
-const key = 'todoListKey';
+        // 宣告 --------------------------------------
+        let checkValue = false;//用於存儲每個待辦事項的勾選狀態
+        const key = 'todoListKey';
 
-// DOM --------------------------------------
-const btnPlus = document.getElementById('btn-plus');
-const listBox = document.getElementById('todoList');
+        // DOM --------------------------------------
+        const btnPlus = document.getElementById('btn-plus');
+        const listBox = document.getElementById('todoList');
 
 
-// function ----待辦事項清單渲染---------------------
-function renderToDo() {
-    // 初始化
-    listBox.innerHTML = '';
-    
+        // function ----待辦事項清單渲染---------------------
+        function renderToDo() {
+            // 初始化
+            listBox.innerHTML = '';
 
-    // 讀取 localStorage
-    let todoList = JSON.parse(localStorage.getItem(key)) || [];
 
-    // 動態長 HTML
-    todoList.forEach((item, index) => {
-        
-        
 
-        const listItem = document.createElement('div');
-        listItem.className = 'list-item';
+            // 讀取 localStorage
+            let todoList = JSON.parse(localStorage.getItem(key)) || [];
+            //如果找不到則新增一個空陣列
 
-        //切換待辦事項的勾選狀態
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.className = 'form-check-input';
-        checkbox.checked = item.check;
-        checkbox.addEventListener('change', () => toggleTodoStatus(index));
+            // 動態長 HTML
+            todoList.forEach((item, index) => {
 
-        //編輯待辦事項內容
-        const editButton = document.createElement('button');
-        editButton.className = 'btn btn-info ml-2';
-        editButton.innerText = 'Edit';
-        editButton.addEventListener('click', () => editTodoItem(index));
 
-        //刪除待辦事項資料清單
-        const deleteButton = document.createElement('button');
-        deleteButton.className = 'btn btn-danger ml-2';
-        deleteButton.innerText = 'Delete';
-        deleteButton.addEventListener('click', () => deleteTodoItem(index));
+                
+                const listItem = document.createElement('div');
+                listItem.className = 'list-item input-group mb-0';
 
-        //新增待辦事項清單
-        const todoText = document.createElement('span');
-        todoText.innerText = item.title;
-        todoText.setAttribute('contenteditable', 'true');
-        todoText.addEventListener('blur', () => editTodoTitle(index));
+                const inputDiv = document.createElement('div');
+                inputDiv.className = 'input-group-text';
 
-        
+                //切換待辦事項的勾選狀態
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.className = 'form-check mt-0';                
+                             
+                checkbox.checked = item.check;
+                checkbox.addEventListener('change', () => toggleTodoStatus(index));
 
-        listItem.appendChild(checkbox);
-        listItem.appendChild(todoText);
-        listItem.appendChild(editButton);
-        listItem.appendChild(deleteButton);
-        listBox.appendChild(listItem);
+                //編輯待辦事項內容
+                const editButton = document.createElement('button');
+                editButton.className = 'btn btn-info ml-2';
+                editButton.innerText = 'Edit';
+                editButton.addEventListener('click', () => editTodoItem(index));
 
-        // 檢查是否有 check
-        if (item.check) {
-            listItem.classList.add('done');
+                //刪除待辦事項資料清單
+                const deleteButton = document.createElement('button');
+                deleteButton.className = 'btn btn-danger ml-2';
+                deleteButton.innerText = 'Delete';
+                deleteButton.addEventListener('click', () => deleteTodoItem(index));
+
+                //新增待辦事項清單                
+                const todoText = document.createElement('p');
+                todoText.innerText = item.title;
+                todoText.setAttribute('contenteditable', 'true');
+                todoText.setAttribute('class', 'form-control  ml-2 border border-0');
+                todoText.setAttribute('aria-label', 'Text input with checkbox');
+                todoText.addEventListener('blur', () => editTodoTitle(index));
+
+
+
+                inputDiv.appendChild(checkbox);
+                listItem.appendChild(inputDiv);
+                listItem.appendChild(todoText);
+                listItem.appendChild(editButton);
+                listItem.appendChild(deleteButton);
+                listBox.appendChild(listItem);
+
+                // 檢查是否有 check
+                if (item.check) {
+                    listItem.classList.add('done');
+                }
+            });
+
         }
-    });
-}
 
-function toggleTodoStatus(index) {
-    let todoList = JSON.parse(localStorage.getItem(key)) || [];
-    todoList[index].check = !todoList[index].check;
-    localStorage.setItem(key, JSON.stringify(todoList));
-    renderToDo();
-}
+        function toggleTodoStatus(index) {
+            let todoList = JSON.parse(localStorage.getItem(key)) || [];
+            todoList[index].check = !todoList[index].check;
+            localStorage.setItem(key, JSON.stringify(todoList));
+            renderToDo();
+        }
 
-function editTodoTitle(index) {
-    let todoList = JSON.parse(localStorage.getItem(key)) || [];
-    todoList[index].title = event.target.innerText;
-    localStorage.setItem(key, JSON.stringify(todoList));
-}
+        function editTodoTitle(index) {
+            let todoList = JSON.parse(localStorage.getItem(key)) || [];
+            todoList[index].title = event.target.innerText;
+            //將指定索引的待辦事項的標題更新為事件目標的內容
+            localStorage.setItem(key, JSON.stringify(todoList));
+        }
 
-function deleteTodoItem(index) {
-    let todoList = JSON.parse(localStorage.getItem(key)) || [];
-    todoList.splice(index, 1);
-    localStorage.setItem(key, JSON.stringify(todoList));
-    renderToDo();
-}
+        function deleteTodoItem(index) {
+            let todoList = JSON.parse(localStorage.getItem(key)) || [];
+            todoList.splice(index, 1);
+            //使用 splice 方法刪除指定索引位置的待辦事項
+            localStorage.setItem(key, JSON.stringify(todoList));
+            renderToDo();
+        }
 
-function addTodoItem() {
-    let todoItem = document.getElementById('add-text').value;
-    let todoObj = {
-        title: todoItem,
-        check: checkValue
-    };
-    let todoList = JSON.parse(localStorage.getItem(key)) || [];
-    todoList.push(todoObj);
-    localStorage.setItem(key, JSON.stringify(todoList));
-    document.getElementById('add-text').value = '';
-    renderToDo();
-}
+        function addTodoItem() {
+            let todoItem = document.getElementById('add-text').value;
+            let todoObj = {
+                title: todoItem,
+                check: checkValue
+            };
+            let todoList = JSON.parse(localStorage.getItem(key)) || [];
+            todoList.push(todoObj);
+            localStorage.setItem(key, JSON.stringify(todoList));
+            //將更新後的待辦事項列表以 JSON 字串的形式重新存儲到本地存儲中。
+            document.getElementById('add-text').value = '';
+            renderToDo();
+        }
 
-// 監聽 新增按鈕
-btnPlus.onclick = function () {
-    addTodoItem();
-};
+        // 監聽 新增按鈕
+        btnPlus.onclick = function () {
+            addTodoItem();
+        };
 
-// window.onload --------------------------------------
-window.onload = function () {
-    renderToDo();
-};
+        // window.onload --------------------------------------
+        window.onload = function () {
+            renderToDo();
+        };
 
 
     </script>
 </body>
+
 </html>
