@@ -51,7 +51,7 @@
                 <button class="btn btn-primary" id="btn-plus">Add</button>
             </div>
         </div>
-        <div class="list-box  input-group mb-3" id="todoList">
+        <div class="list-box input-group mb-3" id="todoList">
             <!-- <div class="input-group-text">
                 <input class="form" type="checkbox" value="">
             </div>
@@ -90,6 +90,7 @@
             // 讀取 localStorage
             let todoList = JSON.parse(localStorage.getItem(key)) || [];
             //如果找不到則新增一個空陣列
+            
 
             // 動態長 HTML
             todoList.forEach((item, index) => {
@@ -105,8 +106,7 @@
                 //切換待辦事項的勾選狀態
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
-                checkbox.className = 'form-check mt-0';                
-                             
+                checkbox.className = 'form-check mt-0';     
                 checkbox.checked = item.check;
                 checkbox.addEventListener('change', () => toggleTodoStatus(index));
 
@@ -115,6 +115,13 @@
                 editButton.className = 'btn btn-info ml-2';
                 editButton.innerText = 'Edit';
                 editButton.addEventListener('click', () => editTodoItem(index));
+
+                const saveButton=document.createElement('button');
+                saveButton.className = 'btn btn-success ml-2';
+                saveButton.innerText = 'Save';
+                saveButton.style.display='block';
+                saveButton.addEventListener('click', () => saveTodoItem(index));
+                
 
                 //刪除待辦事項資料清單
                 const deleteButton = document.createElement('button');
@@ -128,7 +135,7 @@
                 todoText.setAttribute('contenteditable', 'true');
                 todoText.setAttribute('class', 'form-control  ml-2 border border-0');
                 todoText.setAttribute('aria-label', 'Text input with checkbox');
-                todoText.addEventListener('blur', () => editTodoTitle(index));
+                
 
 
 
@@ -136,6 +143,7 @@
                 listItem.appendChild(inputDiv);
                 listItem.appendChild(todoText);
                 listItem.appendChild(editButton);
+                listItem.appendChild(saveButton);
                 listItem.appendChild(deleteButton);
                 listBox.appendChild(listItem);
 
@@ -144,6 +152,8 @@
                     listItem.classList.add('done');
                 }
             });
+            //編輯按鈕跟儲存按鈕
+            
 
         }
 
@@ -155,10 +165,35 @@
         }
 
         function editTodoTitle(index) {
+            let todoList = JSON.parse(localStorage.getItem(key)) || [];      
+            let listItem = listBox.children[index];
+            let todoText = listItem.querySelector('.form-control');
+            let editButton = listItem.querySelector('.btn-info');
+            let saveButton = listItem.querySelector('.btn-info.ml-2');
+            todoText.contentEditable = true;
+            editButton.style.display = 'none';
+            saveButton.style.display = 'block';     
+
+            // todoList[index].title =  event.target.innerText;           
+            // // //將指定索引的待辦事項的標題更新為事件目標的內容
+            // localStorage.setItem(key, JSON.stringify(todoLists));
+        }
+        function saveTodoItem(index) {
             let todoList = JSON.parse(localStorage.getItem(key)) || [];
-            todoList[index].title = event.target.innerText;
-            //將指定索引的待辦事項的標題更新為事件目標的內容
+            let listItem = listBox.children[index];
+            let todoText = listItem.querySelector('.form-control');
+            let editButton = listItem.querySelector('.btn-info');
+            let saveButton = listItem.querySelector('.btn-info.ml-2');
+
+        
+            todoText.contentEditable = false;
+            editButton.style.display = 'block';
+            saveButton.style.display = 'none';
+
+            todoList[index].title = todoText.innerText;
             localStorage.setItem(key, JSON.stringify(todoList));
+        
+            renderToDo();
         }
 
         function deleteTodoItem(index) {
