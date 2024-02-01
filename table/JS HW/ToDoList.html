@@ -53,10 +53,11 @@
         </div>
         <div class="list-box input-group mb-3" id="todoList">
             <!-- <div class="input-group-text">
-                <input class="form" type="checkbox" value="">
+                <input  type="checkbox" class="form-check mt-0">
             </div>
-            <input type="text" class="form-control" aria-label="Text input with checkbox">
+            <p contenteditable="false" class="form-control ml-2 border border-0 ria-label="Text input with checkbox">Edit</p>
             <button class="btn btn-info m1-2">EDIT</button>
+            <button class="btn btn-success m1-2">EDIT</button>
             <button class="btn btn-danger m1-2">DELETE</button> -->
         </div>
 
@@ -78,6 +79,7 @@
         // DOM --------------------------------------
         const btnPlus = document.getElementById('btn-plus');
         const listBox = document.getElementById('todoList');
+       
 
 
         // function ----待辦事項清單渲染---------------------
@@ -113,13 +115,15 @@
                 //編輯待辦事項內容
                 const editButton = document.createElement('button');
                 editButton.className = 'btn btn-info ml-2';
-                editButton.innerText = 'Edit';
+                editButton.innerText = 'Edit';                
+                // editButton.disabled =false;
                 editButton.addEventListener('click', () => editTodoItem(index));
+                
 
                 const saveButton=document.createElement('button');
                 saveButton.className = 'btn btn-success ml-2';
                 saveButton.innerText = 'Save';
-                saveButton.style.display='block';
+                saveButton.disabled =true;
                 saveButton.addEventListener('click', () => saveTodoItem(index));
                 
 
@@ -132,11 +136,11 @@
                 //新增待辦事項清單                
                 const todoText = document.createElement('p');
                 todoText.innerText = item.title;
-                todoText.setAttribute('contenteditable', 'true');
+                todoText.setAttribute('contenteditable', 'false');
                 todoText.setAttribute('class', 'form-control  ml-2 border border-0');
                 todoText.setAttribute('aria-label', 'Text input with checkbox');
                 
-
+                
 
 
                 inputDiv.appendChild(checkbox);
@@ -152,9 +156,9 @@
                     listItem.classList.add('done');
                 }
             });
-            //編輯按鈕跟儲存按鈕
             
-
+            
+            
         }
 
         function toggleTodoStatus(index) {
@@ -164,36 +168,40 @@
             renderToDo();
         }
 
-        function editTodoTitle(index) {
+        function editTodoItem(index) {
             let todoList = JSON.parse(localStorage.getItem(key)) || [];      
             let listItem = listBox.children[index];
             let todoText = listItem.querySelector('.form-control');
             let editButton = listItem.querySelector('.btn-info');
-            let saveButton = listItem.querySelector('.btn-info.ml-2');
-            todoText.contentEditable = true;
-            editButton.style.display = 'none';
-            saveButton.style.display = 'block';     
-
-            // todoList[index].title =  event.target.innerText;           
+            let saveButton = listItem.querySelector('.btn-success');
+            
+            
+            console.log('',saveButton);
+            todoList[index].title = event.target.innerText;           
+            todoText.setAttribute('contenteditable', 'true');
+            editButton.setAttribute('disabled','');
+            saveButton.removeAttribute('disabled');
+            
             // // //將指定索引的待辦事項的標題更新為事件目標的內容
-            // localStorage.setItem(key, JSON.stringify(todoLists));
+            localStorage.setItem(key, JSON.stringify(todoList));
+                       
         }
+        
+
         function saveTodoItem(index) {
             let todoList = JSON.parse(localStorage.getItem(key)) || [];
             let listItem = listBox.children[index];
             let todoText = listItem.querySelector('.form-control');
             let editButton = listItem.querySelector('.btn-info');
-            let saveButton = listItem.querySelector('.btn-info.ml-2');
-
-        
-            todoText.contentEditable = false;
-            editButton.style.display = 'block';
-            saveButton.style.display = 'none';
+            let saveButton = listItem.querySelector('.btn-success');
+            todoText.setAttribute('contenteditable', 'false');
+            saveButton.setAttribute('disabled','');
+            editButton.removeAttribute('disabled');
 
             todoList[index].title = todoText.innerText;
             localStorage.setItem(key, JSON.stringify(todoList));
         
-            renderToDo();
+            
         }
 
         function deleteTodoItem(index) {
