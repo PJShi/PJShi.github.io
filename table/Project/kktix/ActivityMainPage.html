@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="//table/Project/reset.css">
+    <style>
+    
+        #dialogue {
+            
+            height: 200px;
+            display: none;
+            position: fixed;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #ccc;            
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="warp">
+        <!-- 活動頁 -->
+        <div class="content-wrapper">            
+            <!-- 活動header頁 開始-->
+            <div class="comtainer">
+                <div class="header">
+                    <div class="header-title">
+                      <h1>Build School Demo Test Activity</h1>
+                    </div>
+                  </div>
+                <!-- 活動資訊 -->
+                <div class="event-info">
+                    <ul class="info">
+                      <li>
+                        <span class="info-desc">
+                          <i class="fa fa-calendar"></i>
+                          <span class="timezoneSuffix">2024/04/24(周三) 13:00(+0800)</span>
+                          <span>
+                            (
+                            <a href="#">iCal/Outlook</a>,
+                            <a href="#" target="_blank">
+                              Google 日曆
+                            </a>
+                            )
+                          </span>
+                        </span>
+                      </li>
+                          <li>
+                            <span class="info-desc">
+                              <i class="fa fa-map-marker"></i>
+                              Build School / 106台北市大安區忠孝東路三段96號11號樓之1
+                            </span>
+                          </li>
+                        <li>
+                          <span class="info-count"
+                            ><i class="fa fa-male"></i>0/50
+                            </span>
+                        </li>                      
+                    </ul>
+                </div>
+                <!-- --活動圖片-- -->
+                <div class="og-banner">
+                    <img src="https://fakeimg.pl/940x500/200" />
+                </div>
+                <div class="organizers mobi-hide clearfix">
+                    <i class="fa fa-sitemap"></i> 
+                    主辦單位
+                    <a href="#">Build School</a>       
+                </div>
+                <!-- 活動header頁 結束-->
+            </div>
+            <!-- 活動main 開始-->
+        </div>
+    </div>
+   
+    
+
+
+    <footer>
+        <div class="container" id="dialogue">
+            <div class="language">
+                "Language:"
+                <a href="#" class="current">繁體中文</a>
+                <a href="#">English</a>
+                <a href="#">日本語</a>
+            </div>
+            <a href="#" class="loge">LOGO</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.	min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        // Function to show dialogue when scrolling to bottom
+        window.addEventListener('scroll', function () {
+            var dialogue = document.getElementById('dialogue');
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    dialogue.style.display = 'block';
+                } else {
+                    dialogue.style.display = 'none';
+                }
+        });
+    </script>
+</body>
+
+</html>
