@@ -38,19 +38,33 @@ img{
     background-color: #FFF;
     box-shadow: 0 0 20px 0 #000;
 }
+.attend-btn-wrapper .btn-success{
+    text-decoration: none;
+    color:#fff;
+}
 /* 活動內文 */
 .main{
     padding: 15px;
 }
 
-/* 地圖 */
-.location {
-    border-top: 1px solid #ccc;
-    position: relative;
-    background: #60a333;
-    overflow: hidden;
-    display: flex;
+/* 手機板隱藏*/
+.mobi-hide{
+    display: none;
 }
+/* 活動票券 */
+.tickets div{
+/* border: 0.5px solid red; */
+}
+.tickets h2{
+padding: 10px;
+}
+.ticket-list{
+    padding: 10px;
+}
+
+
+
+
 
 /* 標籤 */
 .tags-item{
@@ -85,9 +99,20 @@ footer a{
 
     
 
+    /* 地圖 */
+.location {
+    border-top: 1px solid #ccc;
+    position: relative;
+    /* background: #60a333; */
+    /* overflow: hidden; */
+    display: flex;
 }
-@media (min-width:1200px) {
+/* 活動票券 */
+.mobi-hide{
+    display: flex;
+}
+/* .ticket-title{
+    justify-content: center;
     
-    
-
+} */
 }
