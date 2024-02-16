@@ -2,6 +2,7 @@
 body{
     font-family: sans-serif;
     background-color: #b1b1b1;
+    
 }
 .warp{
     padding: 60px 5px 60px 5px;
@@ -96,12 +97,25 @@ footer a{
 
 
 @media (min-width:768px) {
+/* 共用 */
 
-    
+
+.warp{
+   max-width: 1200px;
+   margin: auto;
+}
+
+.pc-hide a{
+    display: none;
+}
+.pc-hide{
+    display: none;
+}
+  
 
     /* 地圖 */
 .btn-group{
-    
+
 }
 /* 活動票券 */
 .mobi-hide{
