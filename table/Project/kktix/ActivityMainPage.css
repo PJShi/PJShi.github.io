@@ -43,6 +43,9 @@ img{
     text-decoration: none;
     color:#fff;
 }
+.loge{
+    font-size: 30px;
+}
 /* 活動內文 */
 .main{
     padding: 15px;
