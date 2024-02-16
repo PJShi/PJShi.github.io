@@ -100,19 +100,19 @@ footer a{
     
 
     /* 地圖 */
-.location {
-    border-top: 1px solid #ccc;
-    position: relative;
-    /* background: #60a333; */
-    /* overflow: hidden; */
-    display: flex;
+.btn-group{
+    
 }
 /* 活動票券 */
 .mobi-hide{
     display: flex;
 }
-/* .ticket-title{
-    justify-content: center;
+.ticket-title{
+   justify-content: space-evenly;
+}
+.ticket-list{
+    display: flex;
+    justify-content: space-evenly;
     
-} */
+}
 }
