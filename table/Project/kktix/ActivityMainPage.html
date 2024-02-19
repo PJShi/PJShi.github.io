@@ -276,52 +276,7 @@
             </tr>
           </tbody>
         </table>
-        <!-- <div class="tickets-wrapper">
-          <div class="ticket-title mobi-hide">
-            <div class="name">票種</div>
-            <div class="period">販售時間</div>
-            <div class="price">售價</div>
-          </div>
-          <div class="ticket-list">
-            <div class="name">搖滾區</div>
-            <div>
-              <span class="period-time">
-                <span class="time"><span class="timezoneSuffix">2024/02/08 00:40(+0800)</span></span>
-                ~
-                <span class="time"><span class="timezoneSuffix">2024/04/10 00:40(+0800)</span></span>
-              </span>
-            </div>
-            <div>
-              <span class="price"><span class="currency">TWD$</span><span class="currency-value">30,000</span></span>
-            </div>
-          </div>
-          <div class="ticket-list">
-            <div class="name">一般區</div>
-            <div>
-              <span class="period-time">
-                <span class="time"><span class="timezoneSuffix">2024/02/08 00:00(+0800)</span></span>
-                ~
-                <span class="time"><span class="timezoneSuffix">2024/04/10 00:00(+0800)</span></span>
-              </span>
-            </div>
-            <div>
-              <span class="price"><span class="currency">TWD$</span><span class="currency-value">350</span></span>
-            </div>
-          </div>
-          <div class="ticket-list">
-            <div class="name">角落區</div>
-            <div>
-              <span class="period-time">
-                <span class="time"><span class="timezoneSuffix">2024/02/08 00:00(+0800)</span></span>
-                ~
-                <span class="time"><span class="timezoneSuffix">2024/04/10 00:00(+0800)</span></span>
-              </span>
-            </div>
-            <div>
-              <span class="price"><span class="currency">TWD$</span><span class="currency-value">200</span></span>
-            </div>
-          </div>
-        </div> -->
+        
         <div class="attend-btn-wrapper d-grid gap-2 p-4">
           <a href="https://libclf.github.io/practice/seats-booking/select-ticket-types.html" class="btn btn-success"
             type="button">下一步</a>
@@ -346,17 +301,13 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.	min.js"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-  <script>
-    (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })({
-      key: "AIzaSyB3EaB96udUsBhoJ7Wb28Eul-JZCvLctcE",
-      // Add other bootstrap parameters as needed, using camel case.
-      // Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
-    });
-  </script>
+  
+  <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+    ({key: "AIzaSyB3EaB96udUsBhoJ7Wb28Eul-JZCvLctcE", v: "beta"});</script>
   <script>
     // Initialize and add the map
     let map;
