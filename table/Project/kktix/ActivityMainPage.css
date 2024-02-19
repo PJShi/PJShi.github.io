@@ -304,10 +304,10 @@ footer div img {
         margin: 15px;
     }
 
-    .logo {}
 }
 
 @media (min-width:1000px) {
+    /* 地圖 */
     .btn-wrapper {
         width: 750px;
         height: 350px;
@@ -317,8 +317,5 @@ footer div img {
     .map-wrapper .address {
         display: flex;
         margin: 20px;
-
-
-
     }
 }
