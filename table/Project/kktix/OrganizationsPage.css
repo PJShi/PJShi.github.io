@@ -32,12 +32,16 @@ body {
 .main-content a {
     color: #000;
     text-decoration: none;
-
-
 }
-
+.main-content .fa{
+    color: #787575;
+}
 .info-org i {
     padding: 10px;
+}
+.side-block .info-org a:hover{
+    color: #787575;
+    
 }
 
 /* description-block */
@@ -98,6 +102,9 @@ body {
     text-decoration: none;
     color: #000;
 }
+.org-event-list a:hover{
+    color: #504f4ffd;
+}
 
 .org-event-list .date {
     color: #aaa;
@@ -140,7 +147,7 @@ body {
 /* history-events曾經舉辦的活動 */
 .history-events {
     padding: 50px 12px;
-    
+
 
 }
 
@@ -148,6 +155,7 @@ body {
     max-width: 600px;
     margin: auto;
 }
+
 .history-container h2 {
     font-size: 24px;
     font-weight: bold;
@@ -157,6 +165,15 @@ body {
 .history-container h3 {
     font-size: 20px;
     margin-top: 30px;
+}
+
+.history-wrapper a {
+    text-decoration: none;
+    color: #64C06B;
+}
+
+.history-wrapper a:hover {
+    color: #2c8b34;
 }
 
 .table-wrapp {
@@ -214,7 +231,7 @@ footer {
 footer a {
     text-decoration: none;
     color: #aaa;
-    margin: 15px;
+    margin: 2%;
 }
 
 footer div img {
@@ -230,7 +247,12 @@ footer div img {
 
 .language .current {
     border-bottom: 2px solid #64c025;
-    padding: 8px;
+    color: #fff;
+    padding: 5px;
+}
+
+.language a:hover {
+    color: #fff;
 }
 
 @media (min-width:768px) {
@@ -238,7 +260,8 @@ footer div img {
         max-width: 850px;
         margin: auto;
     }
-    .attend-btn-wrapper{
+
+    .attend-btn-wrapper {
         max-width: 600px;
         margin: auto;
     }
@@ -258,9 +281,10 @@ footer div img {
 
     /* 近期活動卡牌 */
     .org-event-list h2 {
-       padding: 0;
-        
+        padding: 0;
+
     }
+
     .org-event-list li {
         margin-bottom: 40px;
         padding-left: 260px;
@@ -275,27 +299,33 @@ footer div img {
         left: 0;
         position: absolute;
     }
-    .description{
+
+    .description {
         border: none;
     }
+
     /* 曾舉辦的活動 */
-    .history-container{
+    .history-container {
         padding: 15px;
         max-width: 900px;
     }
+
     .history-events .history-wrapper {
         padding-left: 200px;
         position: relative;
     }
+
     .history-events .history-wrapper h3 {
         margin: 20px 0 0;
         font-weight: 400;
         position: absolute;
         left: 5px;
     }
+
     .history-list-past:last-child {
         padding-bottom: 40px;
     }
+
     /* 底部 */
     footer .container {
         display: flex;
