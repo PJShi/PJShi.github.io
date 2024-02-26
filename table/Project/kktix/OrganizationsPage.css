@@ -4,13 +4,13 @@ body {
 
 }
 
-.weapper {
+.wrapper {
     padding: 60px 0px 60px 0px;
     width: 100%;
 }
 
-/* main-org */
-.main-org {}
+
+
 
 .org-avatar,
 .org-title {
@@ -301,7 +301,7 @@ footer div img {
     .org-event-list .img-wrapper {
         grid-row-start: 1;
         grid-row-end: 5;
-        margin: 0 20px 20px 20px;
+        margin: 5px 20px 20px 20px;
         overflow: hidden;
     }
 
