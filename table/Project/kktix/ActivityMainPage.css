@@ -251,7 +251,20 @@ footer div img {
     .pc-hide {
         display: none;
     }
-
+    .mobi-hide{
+        display: block;
+    }
+    .organizers{
+    background-color: #aaaaaa5e;
+    padding: 20px 30px;
+    }
+    .organizers a{
+        color: #64C06B;
+        text-decoration: none;
+    }
+    .organizers a:hover{
+        color: #2c8b34;
+    }
 
     /* 地圖 */
 
