@@ -1,35 +1,36 @@
 /* 共用 */
 body {
     font-family: sans-serif;
-
+    
 }
 
 .wrapper {
     padding: 60px 0px 60px 0px;
     width: 100%;
 }
-li{
+
+li {
     list-style-type: none;
 }
-
-
-
 .org-avatar,
 .org-title {
     text-align: center
 }
 
-.org-avatar img {
-    width: 240px;
-    height: 240px;
-}
+    .org-avatar img {
+        width: 240px;
+        height: 240px;
+    }
 
 .org-title {
     font-size: 28px;
     font-weight: bold;
     padding: 10px;
 }
-
+.btn-dark {
+    background-color: var(--main-green);
+    border: var(--main-green); 
+}
 /* main-content */
 .main-content a {
     color: #000;
@@ -39,30 +40,31 @@ li{
 .main-content .fa {
     color: #787575;
 }
-
-.info-org i {
+.info-org-webfb {
+    width: 180px;
+}
+.info-org-webfb i {
     padding: 10px;
 }
 
-.side-block .info-org a:hover {
+.side-block .info-org-webfb a:hover {
     color: #787575;
-
 }
 
 /* description-block */
-.description-block {
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
 
-.description-block p {
-    font-size: 20px;
-    color: rgb(78, 86, 101);
-    font-family: helvetica, arial, sans-serif;
-    padding: 5px 10px;
-    line-height: 1.5em;
-}
 
+    .description-block p {
+        font-size: 20px;
+        color: rgb(78, 86, 101);
+        font-family: helvetica, arial, sans-serif;
+        padding: 5px 10px;
+        line-height: 1.5em;
+    }
+    /*行事曆*/
+#calendar {
+    
+}
 /* container-head近期公開活動 */
 .container-head {
     display: flex;
@@ -72,11 +74,13 @@ li{
 }
 
 .container-head h2 {
-    font-size: 24px;
-    justify-content: space-evenly;
-    width: 100%;
-
-}
+        font-size: 24px;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+.container-head i {
+        margin-left: 10px;
+    }
 
 .fa-rss-square {
     color: #E3780F;
@@ -87,16 +91,17 @@ li{
     width: 220px;
     padding: 5px;
     align-items: center;
+    justify-content: end;
 }
 
-.switch-block .fa-calendar {
-    font-size: 20px;
-    padding: 5px 10px;
-    color: #aaa;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    margin-left: 5px;
-}
+    .switch-block .fa-calendar {
+        font-size: 20px;
+        padding: 5px 10px;
+        color: #aaa;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
 
 
 /* org-event-list近期活動卡牌 */
@@ -104,32 +109,31 @@ li{
     font-size: 15px;
 }
 
-.org-event-list a {
-    text-decoration: none;
-    color: #000;
-}
+    .org-event-list a {
+        text-decoration: none;
+        color: #000;
+    }
 
-.org-event-list a:hover {
-    color: #504f4ffd;
-}
+        .org-event-list a:hover {
+            color: #504f4ffd;
+        }
 
-.org-event-list .date {
-    color: #aaa;
-    margin: 5px 0px;
+    .org-event-list .date {
+        color: #aaa;
+        margin: 5px 0px;
+    }
 
-}
+    .org-event-list .fa {
+        margin-right: 10px;
+    }
 
-.org-event-list .fa {
-    margin-right: 10px;
-}
-
-.org-event-list h2 {
-    font-size: 20px;
-    font-weight: bold;
-    padding: 5px 0px;
-    margin-top: 30px;
-    line-height: 1.5em;
-}
+    .org-event-list h2 {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 5px 0px;
+        margin-top: 30px;
+        line-height: 1.5em;
+    }
 
 .img-wrapper img {
     vertical-align: top;
@@ -153,8 +157,6 @@ li{
 /* history-events曾經舉辦的活動 */
 .history-events {
     padding: 50px 12px;
-
-
 }
 
 .history-container {
@@ -162,25 +164,25 @@ li{
     margin: auto;
 }
 
-.history-container h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 30px 0px;
-}
+    .history-container h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 30px 0px;
+    }
 
-.history-container h3 {
-    font-size: 20px;
-    margin-top: 30px;
-}
+    .history-container h3 {
+        font-size: 20px;
+        margin-top: 30px;
+    }
 
 .history-wrapper a {
     text-decoration: none;
     color: #64C06B;
 }
 
-.history-wrapper a:hover {
-    color: #2c8b34;
-}
+    .history-wrapper a:hover {
+        color: #2c8b34;
+    }
 
 .table-wrapp {
     display: flex;
@@ -197,69 +199,34 @@ li{
     position: relative;
 }
 
-.history-list-past .date {
-    display: inline-block;
-    box-sizing: border-box;
-    border-radius: 20px;
-    background: #fff;
-    border: 1px solid #d6d6d6;
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 38px;
-    text-align: center;
-    margin-right: 30px;
-}
+    .history-list-past .date {
+        display: inline-block;
+        box-sizing: border-box;
+        border-radius: 20px;
+        background: #fff;
+        border: 1px solid #d6d6d6;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 38px;
+        text-align: center;
+        margin-right: 30px;
+    }
 
-.history-list-past::after {
-    content: "";
-    background: #e5e5e5;
-    width: 4px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 18px;
-    z-index: -1;
-}
+    .history-list-past::after {
+        content: "";
+        background: #e5e5e5;
+        width: 4px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 18px;
+        z-index: -1;
+    }
 
-/* 底部 */
-footer {
-    width: 100%;
-    height: 200px;
-    background-color: #323530;
-    text-align: center;
-    font-size: 14px;
-    color: #aaa;
-}
 
-footer a {
-    text-decoration: none;
-    color: #aaa;
-    margin: 2%;
-}
-
-footer div img {
-    width: 200px;
-    margin-top: 15px;
-    color: #aaa;
-
-}
-
-.language {
-    padding: 15px;
-}
-
-.language .current {
-    border-bottom: 2px solid #64c025;
-    color: #fff;
-    padding: 5px;
-}
-
-.language a:hover {
-    color: #fff;
-}
 
 @media (min-width:768px) {
     .page-content {
@@ -286,15 +253,11 @@ footer div img {
         grid-template-columns: 30% 70%;
         margin-bottom: 40px;
         align-items: start;
-
-
     }
 
     .org-event-list h2 {
         grid-column: 2 / 2;
         margin-top: 0px;
-
-
     }
 
     .org-event-list .date {
@@ -304,37 +267,37 @@ footer div img {
     .org-event-list .img-wrapper {
         grid-row-start: 1;
         grid-row-end: 5;
-        margin: 5px 20px 20px 20px;
+        margin-right: 15px;
         overflow: hidden;
     }
 
-    .org-event-list .img-wrapper img {
-        transition: transform 0.3s ease;
-    }
-    
+        .org-event-list .img-wrapper img {
+            transition: transform 0.3s ease;
+        }
+
     .img-wrapper:hover img {
         transform: scale(1.5);
-        
     }
-    
+
     .img-wrapper .img-btn {
         transition: opacity 0.3s ease;
     }
+
     .img-wrapper:hover .img-btn {
         transform: translate(0, -210%);
         border: none;
         color: #fff;
-        
     }
+
     .img-wrapper:focus img,
     .img-wrapper:focus .img-btn {
         transform: scale(1.5);
     }
+
     .org-event-list .description {
         grid-column: 2 / 2;
         padding-bottom: 0px;
         border: none;
-
     }
 
     /* 曾舉辦的活動 */
@@ -348,27 +311,78 @@ footer div img {
         position: relative;
     }
 
-    .history-events .history-wrapper h3 {
-        margin: 20px 0 0;
-        font-weight: 400;
-        position: absolute;
-        left: 5px;
-    }
+        .history-events .history-wrapper h3 {
+            margin: 20px 0 0;
+            font-weight: 400;
+            position: absolute;
+            left: 5px;
+        }
 
     .history-list-past:last-child {
         padding-bottom: 40px;
     }
+}
 
+/* 底部 */
+
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: #323530;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+}
+
+#footer-end {
+    padding: 10px;
+    width: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+footer a {
+    text-decoration: none;
+    padding: 10px;
+    color: #aaa;
+}
+
+#logo {
+    margin: 0px;
+}
+
+footer img {
+    width: 200px;
+    padding: 10px;
+    margin: 30px;
+    color: #aaa;
+}
+
+
+
+.language {
+    padding: 15px;
+    font-family: sans-serif;
+}
+
+
+.current {
+    border-bottom: 2px solid #64c025;
+    color: #fff;
+    padding: 8px;
+}
+
+.language a:hover {
+    color: #fff;
+}
+
+@media (min-width:768px) {
     /* 底部 */
-    footer .container {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 0px;
-    }
 
-    .language a {
-        margin: 15px;
+
+
+    .language > a:nth-of-type(-n+3) {
+        margin: 10px;
     }
 }

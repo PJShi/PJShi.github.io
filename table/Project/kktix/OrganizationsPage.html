@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OrganizationsPage</title>
@@ -11,237 +12,278 @@
   <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
   <script src="https://kit.fontawesome.com/edf62d94b1.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../kktix/OrganizationsPage.css">
-  <script src="
-https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js
-"></script>
+  <script type='importmap'>
+    {
+      "imports": {
+        "@fullcalendar/core": "https://cdn.skypack.dev/@fullcalendar/core@6.1.11",
+        "@fullcalendar/daygrid": "https://cdn.skypack.dev/@fullcalendar/daygrid@6.1.11"
+      }
+    }
+  </script>
+  <script type='module'>
+    import { Calendar } from '@fullcalendar/core'
+    import dayGridPlugin from '@fullcalendar/daygrid'
+  
+    document.addEventListener('DOMContentLoaded', function() {
+      const calendarEl = document.getElementById('calendar')
+      const calendar = new Calendar(calendarEl, {
+        plugins: [dayGridPlugin],
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+        }
+      })
+      calendar.render()
+      console.log("render")
+    })
+  </script>
+
 </head>
 
 <body>
   <div class="wrapper">
     <div class="page-content">
-      <div class="main-org container">
-        <div class="info-org">
-          <div class="org-avatar">
-            <img src="https://picsum.photos/200/200/?random=9 alt=">
-          </div>
-          <h1 class="org-title">卡米地 comedy club</h1>
-          <div class="attend-btn-wrapper d-grid gap-2 p-4 ">
-            <a href="#" class="btn btn-dark " type="button">成為組織粉絲</a>
-          </div>
-        </div>
-        <div class="main-content">
-          <div class="side-block">
-            <ul class="info-org">
-              <li><a href="#"><i class="fa fa-globe"></i>網站</a></li>
-              <li><a href="#"><i class="fa fa-facebook-square"></i>Facebook 粉絲團</a></li>
-            </ul>
-          </div>
-          <div class="description-block">
-            <p>Live Comedy Club TAIPEI卡米地喜劇俱樂部</p>
-
-            <p>是一專注於現場脫口秀 / 喜劇演出經營的展演製作團隊。</p>
-
-          </div>
-        </div>
-      </div>
-      <!-- 近期公開活動 開始 -->
-      <div class="current-events">
-        <div class="container">
-          <div class="container-head">
-            <h2>近期公開活動<a href="#"><i class="fa fa-rss-square"></i></a></h2>
-            <div class="switch-block">行事曆模式
-              <a href="#" class="Calendar" type="button"><i class="fa fa-calendar"></i></a>
+        <div class="main-org container">
+            <div class="info-org">
+                <div class="org-avatar">
+                    <img src="https://picsum.photos/200/200/?random=9 alt=">
+                </div>
+                <h1 class="org-title">BS code club</h1>
+                <div class="attend-btn-wrapper d-grid gap-2 p-4 ">
+                    <a href="JoinedOrganizations" class="btn btn-dark " type="button">成為組織粉絲</a>
+                </div>
             </div>
-          </div>
-          <!-- 列表模式 -->
-          <div id="calendar" style="display: none;"></div>
-          <ul class="org-event-list" id="eventList">
-            <!-- 第一個活動 -->
-            <li>
-              <h2><a href="#">百靈果週二夜</a></h2>
-              <div class="date"><i class="fa fa-calendar"></i>
-                <span class="timezoneSuffix">2022/08/23 20:50(+0800)</span>
-              </div>
-              <a href="#" class="img-wrapper">
-                <img src="https://picsum.photos/300/200/?random=8">
-                <div class="img-btn">立即購票</div>
+            <div class="main-content">
+                <div class="side-block">
+                <ul class="info-org-webfb">
+                        <li><a href="#"><i class="fa fa-globe"></i>網站</a></li>
+                        <li><a href="#"><i class="fa fa-facebook-square"></i>Facebook 粉絲團</a></li>
+                    </ul>
+                </div>
+                <div class="description-block">
+                    <p>Live BS Club TAIPEI程式俱樂部</p>
 
-              </a>
-              <div class="description">【百靈果週二夜】 每週二晚上在Comedy Plus和Ken and Kylie一起看首播、現場爆料幕後秘辛、不定期的神秘嘉賓演出及現場抽獎。 歡迎大家來玩👌
-                ——————————————— ➤ 時間：週二晚上（19:30入場、20:00開始）#每月第一週休息一次 ➤ 地點：C</div>
-            </li>
-            <!-- 第二個活動 -->
-            <li>
-              <h2><a href="#">【02/24晚高雄】2024年度專場《上帝已死》GOTT IST TOT</a></h2>
-              <div class="date"><i class="fa fa-calendar"></i>
-                <span class="timezoneSuffix">2024/02/24 20:00(+0800)</span>
-              </div>
-              <a href="#" class="img-wrapper">
-                <img src="https://picsum.photos/300/200/?random=9">
-                <div class="img-btn"><span>立即購票</span></div>
-                <img src="">
-              </a>
-              <div class="description">「半是兒戲，半是心存上帝」 演出日期 2024/02/24（六）20:00 ( 19:30入場 ) 演出地點 衛武營國家文化藝術中心戲劇院
-                高雄市鳳山區三多一路1號 購票：KKTIX及全台全家便利商店 主辦：演出路上有限公司 | 協辦：卡米地喜劇俱樂部 KKT</div>
-            </li>
-            <!--  -->
-            <li>
-              <h2><a href="#">【02/24晚高雄】2024年度專場《上帝已死》GOTT IST TOT</a></h2>
-              <div class="date"><i class="fa fa-calendar"></i>
-                <span class="timezoneSuffix">2024/02/24 20:00(+0800)</span>
-              </div>
-              <a href="#" class="img-wrapper">
-                <img src="https://picsum.photos/300/200/?random=9">
-                <div class="img-btn"><span>立即購票</span></div>
-                <img src="">
-              </a>
-              <div class="description">「半是兒戲，半是心存上帝」 演出日期 2024/02/24（六）20:00 ( 19:30入場 ) 演出地點 衛武營國家文化藝術中心戲劇院
-                高雄市鳳山區三多一路1號 購票：KKTIX及全台全家便利商店 主辦：演出路上有限公司 | 協辦：卡米地喜劇俱樂部 KKT</div>
-            </li>
-            <!--  -->
-            <li>
-              <h2><a href="#">【02/24晚高雄】2024年度專場《上帝已死》GOTT IST TOT</a></h2>
-              <div class="date"><i class="fa fa-calendar"></i>
-                <span class="timezoneSuffix">2024/02/24 20:00(+0800)</span>
-              </div>
-              <a href="#" class="img-wrapper">
-                <img src="https://picsum.photos/300/200/?random=9">
-                <div class="img-btn"><span>立即購票</span></div>
-                <img src="">
-              </a>
-              <div class="description">「半是兒戲，半是心存上帝」 演出日期 2024/02/24（六）20:00 ( 19:30入場 ) 演出地點 衛武營國家文化藝術中心戲劇院
-                高雄市鳳山區三多一路1號 購票：KKTIX及全台全家便利商店 主辦：演出路上有限公司 | 協辦：卡米地喜劇俱樂部 KKT</div>
-            </li>
-            <!--  -->
+                    <p>是一群專注於實戰演練 / 經驗豐富的教學團隊。</p>
 
-          </ul>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- 曾舉辦的活動 開始 -->
-      <div class="history-events">
-        <div class="history-container">
-          <h2>曾舉辦的活動</h2>
-          <!-- 一個月份一組history-wrapper -->
-          <div class="history-wrapper">
-            <h3>2024/02</h3>
-            <ul class="history-list-past">
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">18</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【卡米地2/18】瑞恩Ｘ涵冷娜Ｘ酸酸《好難搞女孩 Trouble Girls》單口喜劇專場</a>
-                  </div>
+        <!-- 近期公開活動 開始 -->
+        <div class="current-events">
+            <div class="container">
+                <div class="container-head">
+                    <h2>近期公開活動<a href="#"><i class="fa fa-rss-square"></i></a></h2>
+                    <div class="switch-block">
+                        行事曆模式
+                        <a href="#" class="Calendar" type="button"><i class="fa fa-calendar"></i></a>
+                    </div>
                 </div>
-              </li>
-              <!--  -->
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">17</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【新月半窩2/17】瑞恩Ｘ涵冷娜Ｘ酸酸《好難搞女孩 Trouble Girls》單口喜劇專場</a>
-                  </div>
-                </div>
-              </li>
-              <!--  -->
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">17</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">《漫才日曜日》二月號</a></div>
-                </div>
-              </li>
-              <!--  -->
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">16</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【卡米地2/16】瑞恩Ｘ涵冷娜Ｘ酸酸《好難搞女孩 Trouble Girls》單口喜劇專場</a>
-                  </div>
-                </div>
-              </li>
-              <!--  -->
-            </ul>
-          </div>
-          <!-- 一個月份一組history-wrapper -->
-          <div class="history-wrapper">
-            <h3>2024/01</h3>
-            <ul class="history-list-past">
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">28</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【01/28晚台北】2024年度專場《上帝已死》GOTT IST TOT</a></div>
-                </div>
-              </li>
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">28</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【01/28午台北】2024年度專場《上帝已死》GOTT IST TOT</a></div>
-                </div>
-              </li>
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">26</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【1/26】一場喜劇演員的告白：這就是喜劇？</a></div>
-                </div>
-              </li>
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">26</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【晚01/26】OK的即興劇工作室 - 冬季製作《冬即戀歌》</a></div>
-                </div>
-              </li>
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">26</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">OK的即興劇工作室 - 冬季製作《冬即戀歌》</a></div>
-                </div>
-              </li>
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">21</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【01/21台北】JIM 程建評 單口喜劇專場《上帝已死》Try Out</a></div>
-                </div>
-              </li>
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">20</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【1/20】週末夜喜劇秀</a></div>
-                </div>
-              </li>
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">20</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【01/20】冬季製作：即興大排檔 </a></div>
-                </div>
-              </li>
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">20</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【台中01/20】仁頡喜劇專場：《我朋友的孩子都長大了》</a></div>
-                </div>
-              </li>
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">19</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【01/19】冬季製作：即興大排檔 </a></div>
-                </div>
-              </li>
+            <!-- 行事曆區塊-->
+                <div id="calendar" style="display: none;"></div>
+                <!-- 列表模式 -->
+                <ul class="org-event-list" id="eventList">
+                    <!-- 第一個活動 -->
+                    <li>
+                    <h2><a asp-controller="Events" asp-action="EventPage">黑客松週二夜</a></h2>
+                        <div class="date">
+                            <i class="fa fa-calendar"></i>
+                            <span class="timezoneSuffix">2022/08/23 20:50(+0800)</span>
+                        </div>
+                    <a asp-controller="Events" asp-action="EventPage" class="img-wrapper">
+                            <img src="https://picsum.photos/300/200/?random=8">
+                            <div class="img-btn">立即購票</div>
 
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">6</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【01/06台北】JIM 程建評 單口喜劇專場《上帝已死》Try Out</a></div>
-                </div>
-              </li>
+                        </a>
+                        <div class="description">
+                        【黑客松週二夜】 每週二晚上在BS Plus和Ken and Kylie一起看首播、現場爆料幕後秘辛、不定期的神秘嘉賓演出及現場抽獎。 歡迎大家來玩👌
+                            ——————————————— ➤ 時間：週二晚上（19:30入場、20:00開始）#每月第一週休息一次 ➤ 地點：C
+                        </div>
+                    </li>
+                    <!-- 第二個活動 -->
+                    <li>
+                        <h2><a href="EventPage">【02/24晚高雄】2024年度專場《腦細胞已死》</a></h2>
+                        <div class="date">
+                            <i class="fa fa-calendar"></i>
+                            <span class="timezoneSuffix">2024/02/24 20:00(+0800)</span>
+                        </div>
+                        <a href="EventPage" class="img-wrapper">
+                            <img src="https://picsum.photos/300/200/?random=9">
+                            <div class="img-btn"><span>立即購票</span></div>
+                            <img src="">
+                        </a>
+                        <div class="description">
+                            「半是兒戲，半是心存上帝」 演出日期 2024/02/24（六）20:00 ( 19:30入場 ) 演出地點 衛武營國家文化藝術中心戲劇院
+                            高雄市鳳山區三多一路1號 購票：ShowNest及全台全家便利商店 主辦：演出路上有限公司 | 協辦：BS程式俱樂部 
+                        </div>
+                    </li>
+                    <!--  -->
+                    <li>
+                    <h2><a href="EventPage">【02/24晚高雄】2024年度專場《腦細胞已死》</a></h2>
+                        <div class="date">
+                            <i class="fa fa-calendar"></i>
+                            <span class="timezoneSuffix">2024/02/24 20:00(+0800)</span>
+                        </div>
+                        <a href="EventPage" class="img-wrapper">
+                            <img src="https://picsum.photos/300/200/?random=10">
+                            <div class="img-btn"><span>立即購票</span></div>
+                            <img src="">
+                        </a>
+                        <div class="description">
+                            「半是兒戲，半是心存上帝」 演出日期 2024/02/24（六）20:00 ( 19:30入場 ) 演出地點 衛武營國家文化藝術中心戲劇院
+                        高雄市鳳山區三多一路1號 購票：ShowNest及全台全家便利商店 主辦：演出路上有限公司 | 協辦：BS程式俱樂部
+                        </div>
+                    </li>
+                    <!--  -->
+                    <li>
+                    <h2><a href="EventPage">【02/24晚高雄】2024年度專場《腦細胞已死》</a></h2>
+                        <div class="date">
+                            <i class="fa fa-calendar"></i>
+                            <span class="timezoneSuffix">2024/02/24 20:00(+0800)</span>
+                        </div>
+                        <a href="EventPage" class="img-wrapper">
+                            <img src="https://picsum.photos/300/200/?random=11">
+                            <div class="img-btn"><span>立即購票</span></div>
+                            <img src="">
+                        </a>
+                        <div class="description">
+                            「半是兒戲，半是心存上帝」 演出日期 2024/02/24（六）20:00 ( 19:30入場 ) 演出地點 衛武營國家文化藝術中心戲劇院
+                        高雄市鳳山區三多一路1號 購票：ShowNest及全台全家便利商店 主辦：演出路上有限公司 | 協辦：BS程式俱樂部
+                        </div>
+                    </li>
+                    <!--  -->
 
-              <li>
-                <div class="table-wrapp">
-                  <div class="date-wrapp cell-wrapp"><span class="date">6</span></div>
-                  <div class="title-wrapp cell-wrapp"><a href="#">【高雄01/06】仁頡喜劇專場：《我朋友的孩子都長大了》</a></div>
-                </div>
-              </li>
-            </ul>
-          </div>
+                </ul>
+            </div>
         </div>
-      </div>
+        <!-- 曾舉辦的活動 開始 -->
+        <div class="history-events">
+            <div class="history-container">
+                <h2>曾舉辦的活動</h2>
+                <!-- 一個月份一組history-wrapper -->
+                <div class="history-wrapper">
+                    <h3>2024/02</h3>
+                    <ul class="history-list-past">
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">18</span></div>
+                                <div class="title-wrapp cell-wrapp">
+                                    <a href="EventPage">【BS 2/18】瑞恩Ｘ涵冷娜Ｘ酸酸《好難搞女孩 Trouble Girls》單口喜劇專場</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--  -->
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">17</span></div>
+                                <div class="title-wrapp cell-wrapp">
+                                    <a href="EventPage">【新月半窩2/17】瑞恩Ｘ涵冷娜Ｘ酸酸《好難搞女孩 Trouble Girls》單口喜劇專場</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--  -->
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">17</span></div>
+                                <div class="title-wrapp cell-wrapp"><a href="#">《漫才日曜日》二月號</a></div>
+                            </div>
+                        </li>
+                        <!--  -->
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">16</span></div>
+                                <div class="title-wrapp cell-wrapp">
+                                    <a href="EventPage">【BS 2/16】瑞恩Ｘ涵冷娜Ｘ酸酸《好難搞女孩 Trouble Girls》單口喜劇專場</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--  -->
+                    </ul>
+                </div>
+                <!-- 一個月份一組history-wrapper -->
+                <div class="history-wrapper">
+                    <h3>2024/01</h3>
+                    <ul class="history-list-past">
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">28</span></div>
+                            <div class="title-wrapp cell-wrapp"><a asp-controller="Events" asp-action="EventPage">【01/28晚台北】2024年度專場《腦細胞已死》</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">28</span></div>
+                            <div class="title-wrapp cell-wrapp"><a href="EventPage">【01/28午台北】2024年度專場《腦細胞已死》</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">26</span></div>
+                                <div class="title-wrapp cell-wrapp"><a href="EventPage">【1/26】一場喜劇演員的告白：這就是喜劇？</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">26</span></div>
+                                <div class="title-wrapp cell-wrapp"><a href="EventPage">【晚01/26】OK的即興劇工作室 - 冬季製作《冬即戀歌》</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">26</span></div>
+                                <div class="title-wrapp cell-wrapp"><a href="EventPage">OK的即興劇工作室 - 冬季製作《冬即戀歌》</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">21</span></div>
+                            <div class="title-wrapp cell-wrapp"><a href="EventPage">【01/21台北】JIM 程建評 單口喜劇專場《腦細胞已死》t</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">20</span></div>
+                                <div class="title-wrapp cell-wrapp"><a href="EventPage">【1/20】週末夜喜劇秀</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">20</span></div>
+                                <div class="title-wrapp cell-wrapp"><a href="#">【01/20】冬季製作：即興大排檔 </a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">20</span></div>
+                                <div class="title-wrapp cell-wrapp"><a href="EventPage">【台中01/20】仁頡喜劇專場：《我朋友的孩子都長大了》</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">19</span></div>
+                                <div class="title-wrapp cell-wrapp"><a href="EventPage">【01/19】冬季製作：即興大排檔 </a></div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">6</span></div>
+                            <div class="title-wrapp cell-wrapp"><a href="EventPage">【01/06台北】JIM 程建評 單口喜劇專場《腦細胞已死》</a></div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="table-wrapp">
+                                <div class="date-wrapp cell-wrapp"><span class="date">6</span></div>
+                                <div class="title-wrapp cell-wrapp"><a href="EventPage">【高雄01/06】仁頡喜劇專場：《我朋友的孩子都長大了》</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 
 
 
@@ -262,43 +304,47 @@ https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
+  
+  
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // 获取切换按钮
-      var calendarButton = document.querySelector('.Calendar');
+    window.onload = function () {
+    // 取切换按钮
+    const calendarButton = document.querySelector('.Calendar');
 
-      // 为按钮添加点击事件监听器
-      calendarButton.addEventListener('click', function (event) {
-        event.preventDefault(); // 阻止链接默认的跳转行为
+    // 添加事件監聽
+    // calendarButton.addEventListener('click', function (event) {
+    //     event.preventDefault(); // 阻止跳轉連結
 
-        // 选择要切换显示状态的两个区块
-        var blockToHide = document.getElementById('eventList');
-        var calendarBlock = document.getElementById('calendar');
+    //     // 選擇切換
+    //     var blockToHide = document.getElementById('eventList');
+    //     var calendarBlock = document.getElementById('calendar');
 
-        // 切换区块的显示状态
-        if (blockToHide.style.display !== 'none') {
-          blockToHide.style.display = 'none';         // 隐藏
-          calendarBlock.style.display = 'block';      // 显示日历区块
+    //     // 切換區塊顯示狀態
+    //     if (blockToHide.style.display !== 'none') {
+    //         blockToHide.style.display = 'none';         // 隐藏近期活動區塊
+    //         calendarBlock.style.display = 'block';      // 顯示日曆區塊
+    //     } else {
+    //         blockToHide.style.display = 'block';        // 顯示近期活動區塊
+    //         calendarBlock.style.display = 'none';       // 隐藏日曆區塊
+    //     }
+    // });
+    calendarButton.addEventListener("click", () => {
+      console.log("button click")
+      const blockToHide = document.getElementById('eventList');
+      const calendarBlock = document.getElementById('calendar');
+
+      if (blockToHide.classList.contains("visually-hidden")) {
+            blockToHide.classList.remove("visually-hidden")        // 隐藏近期活動區塊
+            calendarBlock.classList.add("visually-hidden")      // 顯示日曆區塊
         } else {
-          blockToHide.style.display = 'block';        // 显示
-          calendarBlock.style.display = 'none';       // 隐藏日历区块
+          blockToHide.classList.add("visually-hidden")        // 隐藏近期活動區塊
+          calendarBlock.classList.remove("visually-hidden")      // 隐藏日曆區塊
         }
-      });
-    });
+    })
+};
   </script>
 
-
-  <script>
-
-    document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar');
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth'
-      });
-      calendar.render();
-    });
-
-  </script>
+  
 
 </body>
 
