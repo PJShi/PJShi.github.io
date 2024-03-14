@@ -297,6 +297,81 @@
                    type="button">下一步</a>
             </div>
         </div>
+        <div class="event-attendees ">
+            <h2><span>26</span> 報名人</h2>
+            <div class="attendees-btn">
+                <div class="p-3 justify-content-center show-attendees">
+                    <a  class="btn btn-outline-success attendee-display-switch  w-50" type="button" id="toggleAttendeesBtn">
+                      顯示報名人
+                    </a>
+                </div>
+            </div>
+            <ul class="attendees" >
+                <li>
+                    <a href="">
+                      <img src="" alt="">AAAA
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <img src="" alt="">BBBB
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <img src="" alt="">CCCC
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <img src="" alt="">DDDD
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <img src="" alt="">EEEE
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <img src="" alt="">FFFF
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <img src="" alt="">GGGG
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <img src="" alt="">HHHH
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <img src="" alt="">IIII
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <img src="" alt="">JJJJ
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <img src="" alt="">KKKK
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <img src="" alt="">LLLL
+                    </a>
+                  </li>
+                  <div class="more">
+                      ...以及其他 14 人
+                  </div>
+            </ul>
+        </div>      
     </div>
 </div>
 
@@ -350,6 +425,19 @@
     }
 
     initMap();
+  </script>
+  <script>
+   var toggleAttendeesBtn = document.getElementById('toggleAttendeesBtn');
+  var attendeesList = document.querySelector('.attendees'); 
+  
+  
+  toggleAttendeesBtn.addEventListener('click', function() {
+    var isListVisible = attendeesList.style.display !== 'none';
+    attendeesList.style.display = isListVisible ? 'none' : '';
+    toggleAttendeesBtn.textContent = isListVisible ? '顯示報名人' : '隱藏報名人';
+  });
+  
+
   </script>
 </body>
 

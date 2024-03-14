@@ -46,6 +46,13 @@ a {
     color: var(--main-green);
 }
 
+/* 手機板隱藏*/
+.mobi-hide {
+    display: none;
+}
+
+/* ----------- */
+
 .header-container {
     width: 100%;
 }
@@ -62,10 +69,10 @@ a {
     padding: 10px 30px;
 }
 
-    .event-info i {
-        display: inline-flex;
-        align-items: center;
-    }
+.event-info i {
+    display: inline-flex;
+    align-items: center;
+}
 
 .info p {
     text-indent: -1em;
@@ -107,35 +114,32 @@ p .fa {
 
 .description {
     margin: 10px 20px;
-    
+
 }
 
-    .description p {
-        padding-left: 30px;
-    }
-
-
-    .description ol {
-        list-style-type: decimal;
-        list-style-position: outside;
-        text-indent: 0.1em;
-        padding-left: 45px;
-    }
-
-    .description ul {
-        list-style-type: disc;
-        list-style-position: outside;
-    }
-
-    .description li {
-        margin-left: 20px;
-    }
-
-
-/* 手機板隱藏*/
-.mobi-hide {
-    display: none;
+.description p {
+    padding-left: 30px;
 }
+
+
+.description ol {
+    list-style-type: decimal;
+    list-style-position: outside;
+    text-indent: 0.1em;
+    padding-left: 45px;
+}
+
+.description ul {
+    list-style-type: disc;
+    list-style-position: outside;
+}
+
+.description li {
+    margin-left: 20px;
+}
+
+
+
 
 
 /* 標籤 */
@@ -146,15 +150,15 @@ p .fa {
     padding-left: 10px;
 }
 
-    .tags-item a {
-        padding: 2px 10px;
-        color: #FFF;
-        margin-right: 15px;
-    }
+.tags-item a {
+    padding: 2px 10px;
+    color: #FFF;
+    margin-right: 15px;
+}
 
-    .tags-item a {
-        background-color: var(--main-green);
-    }
+.tags-item a {
+    background-color: var(--main-green);
+}
 
 /* 地圖 */
 .location {
@@ -178,9 +182,9 @@ p .fa {
     bottom: 20px;
 }
 
-    .btn-group .btn {
-        margin: 0px;
-    }
+.btn-group .btn {
+    margin: 0px;
+}
 
 /* 活動票券 */
 
@@ -208,6 +212,43 @@ tbody td {
     margin: 10px;
 }
 
+/* 報名人區塊 */
+.event-attendees {
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    padding: 30px 0 60px 0;
+
+}
+
+.event-attendees span {
+    color: rgb(213, 145, 9);
+}
+
+.event-attendees h2 {
+    margin: 0px 10px 10px 40px;
+    /* padding: 10px 10px 10px 55px ; */
+    color: #fff;
+}
+.show-attendees{
+    display: flex;
+}
+
+ul.attendees {
+    margin-top: 50PX;
+    margin: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    grid-gap: 10px;
+    grid-row-gap: 20px;
+
+}
+.attendees{
+    display: none;
+}
+
+
+
 
 
 @media (min-width:768px) {
@@ -227,7 +268,9 @@ tbody td {
         display: none;
     }
 
-    .mobi-hide, .mobi-hide i, .mobi-hide a {
+    .mobi-hide,
+    .mobi-hide i,
+    .mobi-hide a {
         display: flex;
     }
 
@@ -237,19 +280,19 @@ tbody td {
         align-items: center;
     }
 
-        .organizers i {
-            padding: 10px;
-        }
+    .organizers i {
+        padding: 10px;
+    }
 
-        .organizers a {
-            color: #64C06B;
-            text-decoration: none;
-            padding: 10px;
-        }
+    .organizers a {
+        color: #64C06B;
+        text-decoration: none;
+        padding: 10px;
+    }
 
-            .organizers a:hover {
-                color: #2c8b34;
-            }
+    .organizers a:hover {
+        color: #2c8b34;
+    }
 
     /* 地圖 */
 
@@ -258,20 +301,24 @@ tbody td {
         height: 350px;
         margin: auto;
     }
+
     .map-wrapper .address {
         margin: 20px;
     }
+
     /* 活動票券 */
     .tickets {
         padding: 10px;
     }
 
-        .tickets h2 {
-            padding-left: 40px;
+    .tickets h2 {
+        padding-left: 40px;
     }
+
     .tickets-wrapper .mobi-hide {
         display: flex;
     }
+
     .tickets-wrapper tr {
         width: 90%;
         display: flex;
@@ -282,12 +329,41 @@ tbody td {
         justify-content: space-between;
         margin: auto;
     }
+
     .tickets-wrapper th {
         padding: 10px;
+    }
+
+    /* 報名人區塊 */
+
+    ul.attendees {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(18%, 1fr));
+        grid-gap: 10px;
+        grid-row-gap: 20px;
+    }
+
+    .attendees-btn {
+        position: absolute;
+        top: 50px;
+        width: 100%;
+    }
+    .show-attendees{
+        display: none;
+    }
+
+    .attendees {
+        padding: 0 20px;
+        display: grid !important;
+    }
+
+    .attendees a {
+        padding: 20px 0;
     }
 }
 
 @media (min-width:1000px) {
+
     /* 地圖 */
     .btn-wrapper {
         width: 750px;
@@ -310,33 +386,35 @@ footer {
     text-align: center;
     font-size: 14px;
     color: #aaa;
-    
+
 }
 
-#footer-end{
-    padding:10px;
-    width:auto;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
+#footer-end {
+    padding: 10px;
+    width: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-    footer a {
-        text-decoration: none;
-        padding:10px;
-        color: #aaa;
-        
-    }
-    #logo{
-       margin:0px;
-    }
-    footer img {     
-        width:200px;
-        padding:10px;
-        margin:30px;
-        color: #aaa;
-        
-    }
+footer a {
+    text-decoration: none;
+    padding: 10px;
+    color: #aaa;
+
+}
+
+#logo {
+    margin: 0px;
+}
+
+footer img {
+    width: 200px;
+    padding: 10px;
+    margin: 30px;
+    color: #aaa;
+
+}
 
 
 
@@ -346,23 +424,22 @@ footer {
 }
 
 
-    .current {
-        border-bottom: 2px solid #64c025;
-        color: #fff;
-        padding: 8px;
-    }
+.current {
+    border-bottom: 2px solid #64c025;
+    color: #fff;
+    padding: 8px;
+}
 
-    .language a:hover {
-        color: #fff;
-    }
+.language a:hover {
+    color: #fff;
+}
 
 @media (min-width:768px) {
     /* 底部 */
-    
 
-        
-    .language > a:nth-of-type(-n+3) {
+
+
+    .language>a:nth-of-type(-n+3) {
         margin: 10px;
     }
 }
-
